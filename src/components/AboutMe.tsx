@@ -28,11 +28,11 @@ const AboutMe: React.FC = () => {
         "--progress",
         String(1 - progress)
       );
-      progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+      progressContent.current.textContent =  time < -99 ? `${Math.ceil(time / 1000)}s`: `-10s`;
     }
   };
   const paragraphs =
-    language === "DE" ? aboutMeData.paragraphs_DE : aboutMeData.paragraphs_EN;
+    language === "ES" ? aboutMeData.paragraphs_ES : aboutMeData.paragraphs_EN;
 
   return (
     <React.Fragment>
@@ -48,12 +48,12 @@ const AboutMe: React.FC = () => {
           >
             <p className="text-[--black] mb-6">
               <span className="text-orange">&lt;</span>
-              {language === "DE" ? aboutMeData.title : aboutMeData.title_EN}
+              {language === "ES" ? aboutMeData.title : aboutMeData.title_EN}
               <span className="text-orange">/&gt;</span>
             </p>
 
             <h2 className="text-[--black] text-center max-lg:text-left break-words">
-              {language === "DE"
+              {language === "ES"
                 ? aboutMeData.description
                 : aboutMeData.description_EN}
             </h2>
@@ -61,7 +61,7 @@ const AboutMe: React.FC = () => {
         </div>
         <div className="flex flex-row justify-center gap-6 items-center pl-32 pr-32 mb-16  max-lg:flex-col max-lg:p-16 min-[1921px]:px-[45rem] min-[1921px]:mb-48">
           <article className="pl-60 max-lg:p-0">
-            <img src={me} alt={me} />
+            {/* <img src={me} alt={me} /> */}
           </article>
           <Swiper
             spaceBetween={100}

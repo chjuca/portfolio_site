@@ -42,15 +42,15 @@ const Contact: React.FC = () => {
     try {
       const response = await axios.post(apiBaseUrl, data);
       console.log(response);
-      if (language === "DE") {
-        toast.success(toastMessages.successEmailSent.de);
+      if (language === "ES") {
+        toast.success(toastMessages.successEmailSent.es);
       } else {
         toast.success(toastMessages.successEmailSent.en);
       }
     } catch (error) {
       console.log(error);
-      if (language === "DE") {
-        toast.error(toastMessages.failedEmailSent.de);
+      if (language === "ES") {
+        toast.error(toastMessages.failedEmailSent.es);
       } else {
         toast.error(toastMessages.failedEmailSent.en);
       }
@@ -122,8 +122,8 @@ const Contact: React.FC = () => {
   const codeSnippet = `
 import  { useState } from "react";
 
-// 🌈 Spreading Stardust: 
-// Crafting Cosmic Email 🌌
+// 🌈 Spreading magic dust:
+// Creating a magical email 🌌
 
 const [sender, setSender] = "${name}${
     lastUpdatedField === "name" ? (cursorBlink ? "|" : " ") : ""
@@ -135,41 +135,14 @@ const [subject, setSubject] = \n"${subject}${
     lastUpdatedField === "subject" ? (cursorBlink ? "|" : " ") : ""
   }✨";
 const [message, setMessage] = 
-\`Hello, intrepid traveler! 👋\n
-Across the cosmos, a message for you:\n
+\`Hello, developer! 👋\n
+A message for you:\n
 "${wordWrap(message, 40, " ")}${
     lastUpdatedField === "message" ? (cursorBlink ? "|" : " ") : ""
   }"\n
-Wishing you stardust dreams,\n
+Salu✌🏼,\n
 ${name}${lastUpdatedField === "name" ? (cursorBlink ? "|" : " ") : ""}
 \``;
-
-  //   const codeSnippet2 = `
-  // // 🚀 Initiating Quantum Email Transmission 🪐
-  // const launchEmail = async () => {
-  //   try {
-  //     const response = await fetch('https://alpaycelik.dev/send',{
-  //     method: 'POST',
-  //     headers: {'Content-Type': 'application/json'},
-  //     body: JSON.stringify({
-  //      sender,
-  //      recipient,
-  //      subject,
-  //      message
-  //     })
-  //    });
-
-  //    if (response.ok) {
-  //    console.log('🌌 Transmission successful!');
-  //    } else {
-  //    console.error('🌠 Cosmic glitch encountered...');
-  //    }
-  //   } catch (error) {
-  //   console.error('🌪 Quantum disturbance detected:', error);
-  //   }
-  // };
-  // // 🚀 Ready for Liftoff? 🛸
-  // launchEmail();`;
 
   return (
     <React.Fragment>
@@ -191,13 +164,13 @@ ${name}${lastUpdatedField === "name" ? (cursorBlink ? "|" : " ") : ""}
           >
             <p className="text-[--black] mb-6">
               <span className="text-[--orange]">&lt;</span>
-              {language === "DE" ? contactData.title.de : contactData.title.en}
+              {language === "ES" ? contactData.title.es : contactData.title.en}
               <span className="text-[--orange]">/&gt;</span>
             </p>
 
             <h2 className="text-[--black] text-center">
-              {language === "DE"
-                ? contactData.description.de
+              {language === "ES"
+                ? contactData.description.es
                 : contactData.description.en}
             </h2>
           </motion.div>
@@ -232,8 +205,8 @@ ${name}${lastUpdatedField === "name" ? (cursorBlink ? "|" : " ") : ""}
                 key={index}
                 type={input.type}
                 placeholder={
-                  language === "DE"
-                    ? `${input.placeholder.de}`
+                  language === "ES"
+                    ? `${input.placeholder.es}`
                     : `${input.placeholder.en}`
                 }
                 name={input.name}
@@ -266,8 +239,8 @@ ${name}${lastUpdatedField === "name" ? (cursorBlink ? "|" : " ") : ""}
             <textarea
               rows={contactData.textarea.rows}
               placeholder={
-                language === "DE"
-                  ? `${contactData.textarea.placeholder.de}`
+                language === "ES"
+                  ? `${contactData.textarea.placeholder.es}`
                   : `${contactData.textarea.placeholder.en}`
               }
               name={contactData.textarea.name}
@@ -300,20 +273,20 @@ ${name}${lastUpdatedField === "name" ? (cursorBlink ? "|" : " ") : ""}
                 <span className="checkbox"></span>
               </label>
               <p>
-                {language === "DE"
-                  ? `${contactData.privacyOptIn.checkbox.de}`
+                {language === "ES"
+                  ? `${contactData.privacyOptIn.checkbox.es}`
                   : `${contactData.privacyOptIn.checkbox.en}`}
               </p>
             </div>
             <p>
-              {language === "DE"
-                ? `${contactData.privacyOptIn.description.de}`
+              {language === "ES"
+                ? `${contactData.privacyOptIn.description.es}`
                 : `${contactData.privacyOptIn.description.en}`}
             </p>
             <Button
               value={
-                language === "DE"
-                  ? `${contactData.button.value.de}`
+                language === "ES"
+                  ? `${contactData.button.value.es}`
                   : `${contactData.button.value.en}`
               }
               iconSVG={contactData.icon}
